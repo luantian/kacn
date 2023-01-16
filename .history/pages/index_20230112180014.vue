@@ -2,7 +2,7 @@
   <div class="index">
     <!-- <Category :dataSource="dataSource" isListenerScroll></Category>
     <CategoryList :dataSource="dataSource"></CategoryList> -->
-    <Navbar class="navbar">
+    <Navbar>
       <template #sign>
         <Tag
           type="info"
@@ -30,15 +30,15 @@ export default {
         { title: "抖音", imgPath: require("~/assets/imgs/menu_new_green.svg") },
       ],
       navbarTabs: [
-        { title: 'KA-CN首页', type: 'normal' },
-        { title: '直播平台' },
-        { title: '礼品卡' },
-        { title: '手游充值' },
-        { title: '电商代购' },
-        { title: '视频音乐' },
-        { title: '游戏陪玩' },
-        { title: '社交互动' },
-        { title: '实用工具' },
+        { title: 'KA-CN首页', },
+        { title: '直播平台', type: 'dropdown'},
+        { title: '礼品卡', type: 'dropdown' },
+        { title: '手游充值', type: 'dropdown' },
+        { title: '电商代购', type: 'dropdown' },
+        { title: '视频音乐', type: 'dropdown' },
+        { title: '游戏陪玩', type: 'dropdown' },
+        { title: '社交互动', type: 'dropdown' },
+        { title: '实用工具', type: 'dropdown' },
       ]
     };
   },
@@ -58,10 +58,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-
-.navbar {
-  display: flex;
-  align-items: center;
-}
-</style>
+<style lang="less" scoped></style>

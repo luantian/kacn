@@ -16,6 +16,7 @@
     <NavbarTab :dataSource="navbarTabs"></NavbarTab>
   </div>
 </template>
+<!-- 调整组件间数据传递，共享问题， -->
 
 <script>
 export default {

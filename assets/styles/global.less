@@ -2,3 +2,25 @@ html {
   scroll-padding-top: 200px;
   scroll-behavior: smooth;
 }
+
+body {
+  color: #333;
+}
+
+/*
+  替换全局el-select三角箭头样式，并修正箭头方向
+*/
+
+::v-deep(.el-icon-arrow-up) {
+  background: url("~assets/imgs/down_black.svg") no-repeat;
+  background-position: 5px 13px;
+  transform: rotateZ(0) !important;
+}
+
+::v-deep(.el-select .el-input .el-select__caret.is-reverse) {
+  transform: rotateZ(180deg) !important;
+}
+
+::v-deep(.el-icon-arrow-up::before) {
+  content: '';
+}

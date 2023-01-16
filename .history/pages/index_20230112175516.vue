@@ -2,7 +2,7 @@
   <div class="index">
     <!-- <Category :dataSource="dataSource" isListenerScroll></Category>
     <CategoryList :dataSource="dataSource"></CategoryList> -->
-    <Navbar class="navbar">
+    <Navbar>
       <template #sign>
         <Tag
           type="info"
@@ -13,7 +13,7 @@
         </Tag>
       </template>
     </Navbar>
-    <NavbarTab :dataSource="navbarTabs"></NavbarTab>
+    <NavbarTab></NavbarTab>
   </div>
 </template>
 
@@ -29,17 +29,6 @@ export default {
         { title: "原神", imgPath: require("~/assets/imgs/menu_hot_red.svg") },
         { title: "抖音", imgPath: require("~/assets/imgs/menu_new_green.svg") },
       ],
-      navbarTabs: [
-        { title: 'KA-CN首页', type: 'normal' },
-        { title: '直播平台' },
-        { title: '礼品卡' },
-        { title: '手游充值' },
-        { title: '电商代购' },
-        { title: '视频音乐' },
-        { title: '游戏陪玩' },
-        { title: '社交互动' },
-        { title: '实用工具' },
-      ]
     };
   },
   async asyncData({ $axios }) {
@@ -58,10 +47,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-
-.navbar {
-  display: flex;
-  align-items: center;
-}
-</style>
+<style lang="less" scoped></style>

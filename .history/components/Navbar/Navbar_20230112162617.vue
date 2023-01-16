@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="currency">
-          <CurrencySelect @change="onCurrencyChange" />
+          <CurrencySelect />
         </div>
         <div class="select-language">
           <CustomSelect v-model="languageType" :options="languages" placeholder="">
@@ -37,7 +37,7 @@
           <Dropdown>
             <template #title>
               <img v-if="isLogin" class="user-photo" src="~assets/imgs/user_photo.png" alt="user_photo">
-              <span v-else class="iconfont icon-menu_user"></span>
+              <span class="iconfont icon-menu_user"></span>
             </template>
             <template #content>
               <div>
@@ -67,11 +67,6 @@ export default {
       languageType: "language1",
     };
   },
-  methods: {
-    onCurrencyChange(val) {
-      console.log('onCurrencyChange', val)
-    }
-  }
 };
 </script>
 
@@ -144,10 +139,6 @@ export default {
     &:hover {
       color: red;
     }
-  }
-
-  .icon-menu_user {
-    font-size: 32px;
   }
 
   .user-photo {

@@ -61,7 +61,6 @@ export default {
 <style lang="less" scoped>
 
 .navbar {
-  display: flex;
-  align-items: center;
+  padding: 36px 0;
 }
 </style>

@@ -5,20 +5,12 @@
         <div class="logo">
           <img src="~/assets/imgs/KACN-logo.png" alt="logo" />
         </div>
-        <div class="search-wrap">
-          <div>请输入充值的游戏名称</div>
-          <div class="signs">
-            <slot name="sign"></slot>
-          </div>
-          <div class="search-button">
-            <img src="~/assets/imgs/menu_search.svg" alt="search_button" />
-          </div>
-        </div>
+        <NavbarSearch></NavbarSearch>
         <div class="currency">
-          <CurrencySelect @change="onCurrencyChange" />
+          <CurrencySelect />
         </div>
         <div class="select-language">
-          <CustomSelect v-model="languageType" :options="languages" placeholder="">
+          <CustomSelect v-model="languageType" :options="languages" placeholder="语言">
             <el-option
               v-for="item in languages"
               :key="item.value"
@@ -36,8 +28,7 @@
         <div class="user-info">
           <Dropdown>
             <template #title>
-              <img v-if="isLogin" class="user-photo" src="~assets/imgs/user_photo.png" alt="user_photo">
-              <span v-else class="iconfont icon-menu_user"></span>
+              <img class="user-photo" src="~assets/imgs/user_photo.png" alt="user_photo">
             </template>
             <template #content>
               <div>
@@ -55,23 +46,12 @@
 import { languages } from "@/utils/consts";
 export default {
   name: "Navbar",
-  props: {
-    isLogin: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
       languages,
       languageType: "language1",
     };
   },
-  methods: {
-    onCurrencyChange(val) {
-      console.log('onCurrencyChange', val)
-    }
-  }
 };
 </script>
 
@@ -93,38 +73,8 @@ export default {
     }
   }
 
-  .search-wrap {
-    display: flex;
-    position: relative;
-    width: 550px;
-    height: 50px;
-    line-height: 50px;
-    border: 2px solid @mainColor;
-    background: #ffffff;
-    border-radius: 25px;
-    color: #999;
-    padding-left: 20px;
-    .search-button {
-      position: absolute;
-      width: 70px;
-      height: 50px;
-      background: @mainColor;
-      justify-content: center;
-      display: flex;
-      align-items: center;
-      box-shadow: 0px 2px 10px 0px rgb(59 140 254 / 50%);
-      border-radius: 25px;
-      box-sizing: border-box;
-      z-index: 2;
-      top: 0;
-      right: -3px;
-      cursor: pointer;
-    }
-  }
 
-  .signs {
-    padding-left: 80px;
-  }
+
 
   .currency {
     margin: 0 10px 0 20px;
@@ -144,10 +94,6 @@ export default {
     &:hover {
       color: red;
     }
-  }
-
-  .icon-menu_user {
-    font-size: 32px;
   }
 
   .user-photo {

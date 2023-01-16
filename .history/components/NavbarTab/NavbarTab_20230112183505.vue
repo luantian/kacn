@@ -1,0 +1,38 @@
+<template>
+  <div class="navbar-tab">
+    <Container>
+      <div class="tab" v-for="(item, index) in dataSource" :key="index">
+        <Dropdown trigger="hover" v-if="item.type === 'dropdown'">
+          <template #title>
+            <div>{{ item.title }}</div>
+          </template>
+          <template #content>
+            <div>弹出层</div>
+          </template>
+        </Dropdown>
+        <div class="" v-else>{{ item.title }}</div>
+      </div>
+    </Container>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "NavbarTab",
+  props: {
+    dataSource: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {};
+  },
+};
+</script>
+
+<style lang="less" scoped>
+.navbar-tab {
+  display: flex;
+}
+</style>
